@@ -16,8 +16,8 @@ ggplot(data, aes(x = charges)) + geom_density(fill = 'grey') + labs(x = 'charges
 
 #finding the 25th, 50th and 75th quantile for each feature
 taus <- c(0.25, 0.5, 0.75)
-num_vars <- c('age', 'bmi', 'children')#numerical features
-cat_vars <- c('sex', 'smoker', 'region')#categorical features
+num_vars <- c('age', 'bmi')#numerical features
+cat_vars <- c('sex', 'smoker', 'region', 'children')#categorical features
 
 #scatter plot of charges vs each numerical feature
 num_plot <- data %>% pivot_longer(all_of(num_vars), names_to = 'variable', values_to = 'value')
